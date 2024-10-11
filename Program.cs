@@ -48,6 +48,20 @@ internal class Program{
       result.SetValue(v.GetValue(i), i);
     return result;
   }
+  static List<int> Union(List<int> a, List<int> b){
+    List<int> U = new List<int>();
+    foreach (int v in a)
+      U.Add(v);
+    for (int i = 0; i<b.Count; i++)
+      for (int j = 0; j<a.Count; j++)
+      {
+        if (b[i] == a[j])
+          break;
+        if (b[i] != a[j] && j == a.Count-1)
+          U.Add(b[i]);
+      }
+    return U;
+  }
   static void Print(object x, string s){
     Console.WriteLine("\n" + s + ": ");
     foreach(int v in (dynamic)x)
@@ -84,8 +98,13 @@ internal class Program{
     Array aunion = Union(aA, aB);
     Array aintersection = Intersection(aA, aB);
     Array asubtraction = Subtraction(aA, aB);
-    Print(aunion, "Union");
-    Print(aintersection, "Intersection");
-    Print(asubtraction, "Subtraction");
+    Print(aunion, "Array Union");
+    Print(aintersection, "Array Intersection");
+    Print(asubtraction, "Array Subtraction");
+
+    List<int> lA = new List<int>{9, 7, 11};
+    List<int> lB = new List<int>{7, 15};
+    List<int> lunion = Union(lA, lB);
+    Print(lunion, "List Union");
   }
 }
