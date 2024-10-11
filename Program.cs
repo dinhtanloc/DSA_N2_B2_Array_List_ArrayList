@@ -62,6 +62,21 @@ internal class Program{
       }
     return U;
   }
+  static List<int> Intersection(List<int> a, List<int> b){
+    return null;
+  }
+  static List<int> Subtraction(List<int> a, List<int> b){
+    return null;
+  }
+  static ArrayList Union(ArrayList a, ArrayList b){
+    return null;
+  }
+  static ArrayList Intersection(ArrayList a, ArrayList b){
+    return null;
+  }
+  static ArrayList Subtraction(ArrayList a, ArrayList b){
+    return null;
+  }
   static void Print(object x, string s){
     Console.WriteLine("\n" + s + ": ");
     foreach(int v in (dynamic)x)
